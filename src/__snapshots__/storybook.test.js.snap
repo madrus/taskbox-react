@@ -67,13 +67,15 @@ exports[`Storyshots Task default 1`] = `
     className="actions"
     onClick={[Function]}
   >
-    <a
+    <button
+      className="link-button"
       onClick={[Function]}
+      type="button"
     >
       <span
         className="icon-star"
       />
-    </a>
+    </button>
   </div>
 </div>
 `;
@@ -110,13 +112,15 @@ exports[`Storyshots Task pinned 1`] = `
     className="actions"
     onClick={[Function]}
   >
-    <a
+    <button
+      className="link-button"
       onClick={[Function]}
+      type="button"
     >
       <span
         className="icon-star"
       />
-    </a>
+    </button>
   </div>
 </div>
 `;

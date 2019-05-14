@@ -46,7 +46,7 @@ yarn start
 However, `yarn run storybook` failed because of the missing `babel-loader` module. So, I decided to go against the advice:
 
 ``` bash
-yarn add babel-loader@8.0.5
+yarn add -D babel-loader@8.0.5
 ```
 
 After that,`yarn run storybook` succeeded.
@@ -54,6 +54,19 @@ After that,`yarn run storybook` succeeded.
 ## Run
 
 Our project has three frontend app modalities: automated test (Jest), component development (Storybook), and the app itself. Depending on what part of the app you’re working on, you may want to run one or more of these simultaneously. Since our current focus is creating a single UI component, we’ll stick with running Storybook.
+
+With the [Storyshots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots) a snapshot test is created for each of the stories. Use it by adding a development dependency on the package:
+
+``` bash
+yarn add --dev @storybook/addon-storyshots react-test-renderer require-context.macro
+```
+
+Then create an `src/storybook.test.js` file with the following in it:
+
+``` js
+import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots();
+```
 
 At some point of tutorial, I got a strange error:
 
@@ -67,7 +80,7 @@ ith appropriate styles. Learn more: https://github.com/evcohen/eslint-plugin-jsx
 alid.md  jsx-a11y/anchor-is-valid
 ```
 
-This is because the `a` attribute is only being used as a handle to trigger some JavaScript code and not as a real link. I followed the advice to replace `a` with `button` tag in `Task.js` line 22:
+This is because the `a` attribute is only being used as a handle to trigger some JavaScript code and not as a real link. I followed the [advice](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md) to replace `a` with the `button` tag in `Task.js` line 22:
 
 ``` jsx
 <a onClick={ () => onPinTask(id) }>
@@ -97,9 +110,35 @@ button.link-button {
 }
 
 button.link-button:hover,
-.link-button:focus {
+button.link-button:focus {
   text-decoration: none;
 }
+```
+
+Also, I had to update the snapshot file: `src/__snapshots__/storybook.test.js.snap` and replace
+
+``` jsx
+<a
+  onClick={[Function]}
+>
+  <span
+    className="icon-star"
+  />
+</a>
+```
+
+with
+
+``` jsx
+<button
+  className="link-button"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="icon-star"
+  />
+</button>
 ```
 
 ---
