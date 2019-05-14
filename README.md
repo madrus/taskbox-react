@@ -1,3 +1,111 @@
+# Storybook
+
+## Installation
+
+``` bash
+# Create our application:
+npx create-react-app taskbox
+cd taskbox
+
+# Add Storybook:
+npx -p @storybook/cli sb init
+
+```
+
+Installing storybook resulted in a warning:
+
+>WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+>
+>You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+>
+>  npm install --save core-js@2    npm install --save core-js@3
+>  yarn add core-js@2              yarn add core-js@3
+>
+>[BABEL] Note: The code generator has deoptimised the styling of C:\Users\AROUSSA58\AppData\Roaming\npm-cache\_npx\1064\node_modules\@storybook\cli\node_modules\lodash\lodash.js as it exceeds the max of 500KB.
+
+``` bash
+# Run the test runner (Jest) in a terminal:
+yarn test
+
+# Start the component explorer on port 9009:
+yarn run storybook
+
+# Run the frontend app proper on port 3000:
+yarn start
+```
+
+`yarn test` threw an error about `babel-loader` version mismatch (`8.0.5` instead of `8.0.6`). Here is how I fixed it:
+
+- ran `rm -rf node_modules/ yarn.lock`
+- removed `babel-loader` devDependencies and ran `yarn`
+- ran `yarn test` and got a new error about `babel-jest` but did not find it among dependencies nor devDependencies
+- deleted `node_modules/babel-jest` folder
+- ran `yarn install` to reinstall the missing modules
+- finally, `yarn test` succeeded
+
+However, `yarn run storybook` failed because of the missing `babel-loader` module. So, I decided to go against the advice:
+
+``` bash
+yarn add babel-loader@8.0.5
+```
+
+After that,`yarn run storybook` succeeded.
+
+## Run
+
+Our project has three frontend app modalities: automated test (Jest), component development (Storybook), and the app itself. Depending on what part of the app you’re working on, you may want to run one or more of these simultaneously. Since our current focus is creating a single UI component, we’ll stick with running Storybook.
+
+At some point of tutorial, I got a strange error:
+
+``` none
+WARNING in ./src/components/Task.js
+Module Warning (from ./node_modules/eslint-loader/index.js):
+
+  Line 22:11:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the hre
+f value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it w
+ith appropriate styles. Learn more: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-v
+alid.md  jsx-a11y/anchor-is-valid
+```
+
+This is because the `a` attribute is only being used as a handle to trigger some JavaScript code and not as a real link. I followed the advice to replace `a` with `button` tag in `Task.js` line 22:
+
+``` jsx
+<a onClick={ () => onPinTask(id) }>
+  <span className={ `icon-star` } />
+</a >
+```
+
+with
+
+``` jsx
+<button type="button" class="link-button" onClick={ () => onPinTask(id) }>
+  <span className={ `icon-star` } />
+</button >
+```
+
+Then I added the following CSS to `src/index.css`:
+
+``` css
+button.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+button.link-button:hover,
+.link-button:focus {
+  text-decoration: none;
+}
+```
+
+---
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
