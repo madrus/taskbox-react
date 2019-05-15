@@ -141,6 +141,8 @@ with
 </button>
 ```
 
+> `addDecorator()` in `TaskList.js` component allows us to add some “context” to the rendering of each task. In this case we add padding around the list to make it easier to visually verify.
+
 ---
 
 # Create React App
