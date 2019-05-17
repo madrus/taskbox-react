@@ -143,6 +143,18 @@ with
 
 > `addDecorator()` in `TaskList.js` component allows us to add some “context” to the rendering of each task. In this case we add padding around the list to make it easier to visually verify.
 
+## Container components
+
+Our `TaskList` component as currently written is “presentational” (see this blog post) in that it doesn’t talk to anything external to its own implementation. To get data into it, we need a “container”.
+
+This example uses [Redux](https://redux.js.org/), the most popular React library for storing data, to build a simple data model for our app. However, the pattern used here applies just as well to other data management libraries like [Apollo](https://www.apollographql.com/client/) and [MobX](https://mobx.js.org/).
+
+Add a new dependency on `package.json` with:
+
+``` bash
+yarn add react-redux redux
+```
+
 ---
 
 # Create React App
