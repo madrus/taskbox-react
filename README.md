@@ -155,6 +155,31 @@ Add a new dependency on `package.json` with:
 yarn add react-redux redux
 ```
 
+## Using StoryShots for Snapshot Testing
+
+[StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) is the integration between __Storybook__ and __Jest Snapshot Testing__.
+
+First, make sure you are inside a Storybook-enabled repo (make sure it has few stories). Then, install StoryShots into your app with:
+
+``` bash
+yarn add -D @storybook/addon-storyshots
+```
+
+Then, assuming you are using Jest for testing, you can create a test file `storyshots.test.js` that contains the following:
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots({ /* configuration options */ });
+```
+
+Now you can snapshot test all of your stories with:
+
+``` bash
+yarn test
+```
+
+This will save the initial set of snapshots inside the `src/__snapshots_` directory. Then, every time you complete any changes, you can run the test again and find all structural changes.
+
 ---
 
 # Create React App
