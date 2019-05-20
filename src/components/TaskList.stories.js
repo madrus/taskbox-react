@@ -1,9 +1,7 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
-import PureTaskList from './TaskList'
+import { PureTaskList } from './TaskList'
 import { task, actions } from './Task.stories'
 
 export const defaultTasks = [
@@ -15,28 +13,13 @@ export const defaultTasks = [
   { ...task, id: '6', title: 'Task 6' },
 ]
 
-// A super-simple mock of a redux store
-const store = {
-  getState: () => {
-    return {
-      tasks: defaultTasks,
-    }
-  },
-  subscribe: () => 0,
-  dispatch: action('dispatch'),
-}
-
 export const withPinnedTasks = [
   ...defaultTasks.slice(0, 5),
   { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
 ]
 
 storiesOf('TaskList', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <div style={{ padding: '3rem' }}>{story()}</div>
-    </Provider>
-  ))
+  .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
   .add('default', () => <PureTaskList tasks={defaultTasks} {...actions} />)
   .add('withPinnedTasks', () => (
     <PureTaskList tasks={withPinnedTasks} {...actions} />

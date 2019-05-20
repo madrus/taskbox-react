@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import './App.css'
+import { Provider } from 'react-redux'
+import store from './lib/redux'
+
+import InboxScreen from './components/InboxScreen'
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <h1>TaskList Application</h1>
-      </div>
+      <Provider store={store}>
+        <InboxScreen />
+      </Provider>
     )
   }
 }
