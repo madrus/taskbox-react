@@ -155,6 +155,8 @@ Add a new dependency on `package.json` with:
 yarn add react-redux redux
 ```
 
+> By definition container components cannot be simply rendered in isolation; they expect to be passed some context or to connect to a service. What this means is that to render a container in Storybook, we must mock (i.e. provide a pretend version) the context or service it requires.
+
 ## Using StoryShots for Snapshot Testing
 
 [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) is the integration between __Storybook__ and __Jest Snapshot Testing__.
