@@ -143,6 +143,45 @@ with
 
 > `addDecorator()` in `TaskList.js` component allows us to add some “context” to the rendering of each task. In this case we add padding around the list to make it easier to visually verify.
 
+## Container components
+
+Our `TaskList` component as currently written is “presentational” (see this blog post) in that it doesn’t talk to anything external to its own implementation. To get data into it, we need a “container”.
+
+This example uses [Redux](https://redux.js.org/), the most popular React library for storing data, to build a simple data model for our app. However, the pattern used here applies just as well to other data management libraries like [Apollo](https://www.apollographql.com/client/) and [MobX](https://mobx.js.org/).
+
+Add a new dependency on `package.json` with:
+
+``` bash
+yarn add react-redux redux
+```
+
+> By definition container components cannot be simply rendered in isolation; they expect to be passed some context or to connect to a service. What this means is that to render a container in Storybook, we must mock (i.e. provide a pretend version) the context or service it requires.
+
+## Using StoryShots for Snapshot Testing
+
+[StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) is the integration between __Storybook__ and __Jest Snapshot Testing__.
+
+First, make sure you are inside a Storybook-enabled repo (make sure it has few stories). Then, install StoryShots into your app with:
+
+``` bash
+yarn add -D @storybook/addon-storyshots
+```
+
+Then, assuming you are using Jest for testing, you can create a test file `storyshots.test.js` that contains the following:
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots({ /* configuration options */ });
+```
+
+Now you can snapshot test all of your stories with:
+
+``` bash
+yarn test
+```
+
+This will save the initial set of snapshots inside the `src/__snapshots_` directory. Then, every time you complete any changes, you can run the test again and find all structural changes.
+
 ---
 
 # Create React App
