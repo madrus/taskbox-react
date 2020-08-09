@@ -1,5 +1,9 @@
 # Storybook
 
+## Migration to Storybook 5.3
+
+See the official [Migration Guide from version 5.2.x to 5.3.x](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-52x-to-53x).
+
 ## Installation
 
 ``` bash

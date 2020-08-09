@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "npx react-scripts start",
 		"build": "npx react-scripts build",
-		"test": "npx react-scripts test",
+		"test": "npx react-scripts test --watchAll",
 		"storybook": "start-storybook -p 9009 -s public",
 		"build-storybook": "build-storybook -s public"
 	},
