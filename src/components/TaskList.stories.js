@@ -1,12 +1,12 @@
 import React from 'react'
 // import { storiesOf } from '@storybook/react'
 
-import { TaskList } from './TaskList'
+import { PureTaskList } from './TaskList'
 import { taskData, actionsData } from './Task.stories'
 
 export default {
-	component: TaskList,
-	title: 'TaskList',
+	component: PureTaskList,
+	title: 'PureTaskList',
 	decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>],
 	excludeStories: /.*Data$/,
 }
@@ -24,16 +24,16 @@ export const withPinnedTasksData = [
 	...defaultTasksData.slice(0, 5),
 	{ id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
 ]
-export const Default = () => <TaskList tasks={defaultTasksData} {...actionsData} />
-export const WithPinnedTasks = () => <TaskList tasks={withPinnedTasksData} {...actionsData} />
-export const Loading = () => <TaskList loading tasks={[]} {...actionsData} />
-export const Empty = () => <TaskList tasks={[]} {...actionsData} />;
+export const Default = () => <PureTaskList tasks={defaultTasksData} {...actionsData} />
+export const WithPinnedTasks = () => <PureTaskList tasks={withPinnedTasksData} {...actionsData} />
+export const Loading = () => <PureTaskList loading tasks={[]} {...actionsData} />
+export const Empta = () => <PureTaskList tasks={[]} {...actionsData} />;
 
-// storiesOf('TaskList', module)
+// storiesOf('PureTaskList', module)
 // 	.addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
-// 	.add('default', () => <TaskList tasks={defaultTasks} {...actionsData} />)
+// 	.add('default', () => <PureTaskList tasks={defaultTasks} {...actionsData} />)
 // 	.add('withPinnedTasks', () => (
-// 		<TaskList tasks={withPinnedTasks} {...actionsData} />
+// 		<PureTaskList tasks={withPinnedTasks} {...actionsData} />
 // 	))
-// 	.add('loading', () => <TaskList loading tasks={[]} {...actionsData} />)
-// 	.add('empty', () => <TaskList tasks={[]} {...actionsData} />)
+// 	.add('loading', () => <PureTaskList loading tasks={[]} {...actionsData} />)
+// 	.add('empty', () => <PureTaskList tasks={[]} {...actionsData} />)

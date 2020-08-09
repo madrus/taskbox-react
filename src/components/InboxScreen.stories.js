@@ -1,5 +1,5 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Provider } from 'react-redux'
 
@@ -17,7 +17,16 @@ const store = {
 	dispatch: action('dispatch'),
 }
 
-storiesOf('InboxScreen', module)
-	.addDecorator(story => <Provider store={store}>{story()}</Provider>)
-	.add('default', () => <PureInboxScreen />)
-	.add('error', () => <PureInboxScreen error='Some error has occurred' />)
+export default {
+	component: PureInboxScreen,
+	title: 'InboxScreen',
+	decorators: [story => <Provider store={store}>{story()}</Provider>]
+}
+
+export const Default = () => <PureInboxScreen />
+export const Error = () => <PureInboxScreen error="Something" />;
+
+// storiesOf('InboxScreen', module)
+// 	.addDecorator(story => <Provider store={store}>{story()}</Provider>)
+// 	.add('default', () => <PureInboxScreen />)
+// 	.add('error', () => <PureInboxScreen error='Some error has occurred' />)

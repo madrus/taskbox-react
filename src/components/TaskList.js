@@ -1,3 +1,5 @@
+// src/components/TaskList.js
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -5,7 +7,7 @@ import Task from './Task'
 import { connect } from 'react-redux'
 import { archiveTask, pinTask } from '../lib/redux'
 
-export const TaskList = props => {
+export const PureTaskList = props => {
 	const { loading, tasks, onArchiveTask, onPinTask } = props
 	const events = {
 		onPinTask,
@@ -58,14 +60,14 @@ export const TaskList = props => {
 	)
 }
 
-TaskList.propTypes = {
+PureTaskList.propTypes = {
 	loading: PropTypes.bool,
 	tasks: PropTypes.arrayOf(Task.propTypes.task).isRequired,
 	onArchiveTask: PropTypes.func.isRequired,
 	onPinTask: PropTypes.func.isRequired,
 }
 
-TaskList.defaultProps = {
+PureTaskList.defaultProps = {
 	loading: false,
 }
 
@@ -79,4 +81,4 @@ export default connect(
 		onArchiveTask: id => dispatch(archiveTask(id)),
 		onPinTask: id => dispatch(pinTask(id)),
 	})
-)(TaskList)
+)(PureTaskList)
