@@ -328,7 +328,7 @@ exports[`Storyshots InboxScreen error 1`] = `
 </div>
 `;
 
-exports[`Storyshots Task archived 1`] = `
+exports[`Storyshots Task Archived 1`] = `
 <div
   className="list-item TASK_ARCHIVED"
 >
@@ -368,7 +368,7 @@ exports[`Storyshots Task archived 1`] = `
 </div>
 `;
 
-exports[`Storyshots Task default 1`] = `
+exports[`Storyshots Task Default 1`] = `
 <div
   className="list-item TASK_INBOX"
 >
@@ -418,7 +418,7 @@ exports[`Storyshots Task default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Task long title 1`] = `
+exports[`Storyshots Task Long Title 1`] = `
 <div
   className="list-item TASK_INBOX"
 >
@@ -468,7 +468,7 @@ exports[`Storyshots Task long title 1`] = `
 </div>
 `;
 
-exports[`Storyshots Task pinned 1`] = `
+exports[`Storyshots Task Pinned 1`] = `
 <div
   className="list-item TASK_PINNED"
 >
@@ -518,7 +518,7 @@ exports[`Storyshots Task pinned 1`] = `
 </div>
 `;
 
-exports[`Storyshots TaskList default 1`] = `
+exports[`Storyshots TaskList Default 1`] = `
 <div
   style={
     Object {
@@ -815,7 +815,7 @@ exports[`Storyshots TaskList default 1`] = `
 </div>
 `;
 
-exports[`Storyshots TaskList empty 1`] = `
+exports[`Storyshots TaskList Empty 1`] = `
 <div
   style={
     Object {
@@ -847,7 +847,7 @@ exports[`Storyshots TaskList empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots TaskList loading 1`] = `
+exports[`Storyshots TaskList Loading 1`] = `
 <div
   style={
     Object {
@@ -994,7 +994,7 @@ exports[`Storyshots TaskList loading 1`] = `
 </div>
 `;
 
-exports[`Storyshots TaskList withPinnedTasks 1`] = `
+exports[`Storyshots TaskList With Pinned Tasks 1`] = `
 <div
   style={
     Object {

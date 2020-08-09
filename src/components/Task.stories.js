@@ -1,13 +1,14 @@
 import React from 'react'
 // import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-// import { withKnobs, object } from '@storybook/addon-knobs/react'
+import { withKnobs } from '@storybook/addon-knobs/react'
 
 import Task from './Task'
 
 export default {
 	component: Task,
 	title: 'Task',
+	decorators: [withKnobs],
 	// Our exports that end in "Data" are not stories.
 	excludeStories: /.*Data$/,
 }
