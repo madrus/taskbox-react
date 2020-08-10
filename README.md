@@ -229,32 +229,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Test with Cypress
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [How to Test Storybook with Cypress](https://spin.atomicobject.com/2020/07/06/test-storybook-cypress/)
+- [Testing a Virtual List component with Cypress and Storybook](https://itnext.io/testing-a-virtual-list-component-with-cypress-and-storybook-494dc2d1d26b)
+- [Cypress + Storybook. Keeping test scenario, data and component rendering in one place](https://itnext.io/cypress-storybook-keeping-test-scenario-data-and-component-rendering-in-one-place-c57b23cc1640)
+- [cypress-react-unit-test package](https://github.com/bahmutov/cypress-react-unit-test)
+- [High Quality React apps with Nx, Cypress & Storybook](https://dev.to/juristr/high-quality-react-apps-with-nx-cypress-1a8o)
+- [How to Use Storybook in an Nx Repo](https://nx.dev/react/plugins/storybook/overview)
+- [Nx 8.8: Now You Can Write UI Tests with Storybook and Cypress](https://blog.nrwl.io/ui-testing-with-storybook-and-nx-4b86975224c)
