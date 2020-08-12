@@ -13,3 +13,6 @@ function loadStories() {
 
 configure(loadStories, module)
 
+export const parameters = {
+	actions: { argTypesRegex: "^on[A-Z].*" },
+}

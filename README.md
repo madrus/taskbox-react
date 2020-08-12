@@ -239,3 +239,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [How to Use Storybook in an Nx Repo](https://nx.dev/react/plugins/storybook/overview)
 - [Nx 8.8: Now You Can Write UI Tests with Storybook and Cypress](https://blog.nrwl.io/ui-testing-with-storybook-and-nx-4b86975224c)
   - [Webinar: Test Driven Development with Storybook and Cypress.io](https://www.youtube.com/watch?v=iI1TxPo5EvE)
+
+## Other References
+
+- [Component Controls](https://component-controls.com/) website over documenting the UI components with [MDX](https://mdxjs.com/) and ESM (ECMAScript Modules)
+
